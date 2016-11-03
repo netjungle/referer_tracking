@@ -23,5 +23,5 @@ case rails_version
   when "default"
     gem "rails"
   else
-    gem "rails", "~> 5.0"
+    gem "rails", "~> #{rails_version}"
 end
