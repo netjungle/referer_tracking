@@ -58,6 +58,7 @@ module RefererTracking::ControllerAddons
       ref_mod[:current_request_url] = request.url
       ref_mod[:current_request_referer_url] = request.env["HTTP_REFERER"] # or request.headers["HTTP_REFERER"]
       ref_mod[:session_id] = request.session["session_id"]
+      ref_mod[:ref] = session[:ref]
 
       unless cookies[RefererTracking.set_referer_cookies_name].blank?
         cookie_ver, cookie_time_org, cookie_first_url, cookie_referer_url = cookies[RefererTracking.set_referer_cookies_name].to_s.split("|||")
